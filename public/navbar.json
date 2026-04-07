@@ -1,0 +1,5 @@
+{
+  "brand": "DigiTools",
+  "menu_items": ["Products", "Features", "Pricing", "Testimonials", "FAQ"],
+  "actions": ["Login", "Get Started"]
+}
