@@ -1,11 +1,21 @@
 // import React, { use } from "react";
-import { useState } from "react";
-import { IoCheckmarkOutline } from "react-icons/io5";
 
-const Cart = ({ cart_item }) => {
-  const [isBuy, setBuy] = useState(false);
+import { IoCheckmarkOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
+
+const Cart = ({ cart_item, cartsData, setCartsData }) => {
+  const isAdded = cartsData.some((item) => item.id === cart_item.id);
+
   const handleBuy = () => {
-    setBuy(true);
+    const isFind = cartsData.find((item) => item.id === cart_item.id);
+    if (!isAdded) {
+      setCartsData([...cartsData, cart_item]);
+      toast.success("Item Added");
+    }
+    if (isFind) {
+      toast.error("Items is already added");
+      return;
+    }
   };
   const {
     badge,
@@ -28,7 +38,7 @@ const Cart = ({ cart_item }) => {
   // console.log(cart_item);
 
   return (
-    <section className="Cart-body ">
+    <section className="Cart-body transition-all duration-300 hover:translate-y-2.5 ">
       <div className="relative h-full  mt-10 p-5 flex flex-col rounded-2xl bg-white shadow-sm">
         <div className="absolute top-4 right-4">
           <span
@@ -64,17 +74,14 @@ const Cart = ({ cart_item }) => {
           </ul>
         </div>
         <button
-          onClick={handleBuy}
-          className="btn w-full mt-4 bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white font-extrabold p-3"
+          onClick={() => handleBuy(cart_item)}
+          className={`btn w-full mt-4 rounded-full text-white font-extrabold p-3 transition-all ${
+            isAdded
+              ? "bg-green-500"
+              : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+          }`}
         >
-          {isBuy ? (
-            <>
-              <IoCheckmarkOutline />
-              Add to Cart
-            </>
-          ) : (
-            "Buy Now"
-          )}
+          {isAdded ? "Added to Cart" : "Buy Now"}
         </button>
       </div>
     </section>

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import { use } from "react";
 
-const Navbar = ({ navgationData }) => {
+const Navbar = ({ navgationData, cartsData }) => {
+  const topBadge = cartsData.length;
+
   const navDatas = use(navgationData);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,7 +18,7 @@ const Navbar = ({ navgationData }) => {
       </div>
 
       <div className="flex items-center gap-4">
-        <Logins navDatas={navDatas} />
+        <Logins navDatas={navDatas} topBadge={topBadge} />
 
         {/* Mobile Toggle Button */}
         <button
@@ -71,13 +73,19 @@ const Navlinks = ({ navDatas, mobile }) => {
 };
 
 // Logins Component
-const Logins = ({ navDatas }) => {
+const Logins = ({ navDatas, topBadge }) => {
   const actions = navDatas?.actions || [];
   return (
-    <div className="flex items-center gap-2 md:gap-3">
-      <button className="text-xl md:text-2xl cursor-pointer">
-        <FiShoppingCart />
+    <div className="flex  relative items-center gap-2 md:gap-3">
+      <button className=" relative text-xl md:text-2xl cursor-pointer">
+        <FiShoppingCart className="" />
+        {topBadge > 0 && (
+          <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold border-2 border-white shadow-sm">
+            {topBadge}
+          </span>
+        )}
       </button>
+
       {actions.map((btn, index) => (
         <button
           key={index}
