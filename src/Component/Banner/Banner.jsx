@@ -3,15 +3,13 @@ import { CiPlay1 } from "react-icons/ci";
 
 const Banner = ({ bannerData }) => {
   const banner = use(bannerData);
-  // const { badge, title, description, primaryBtn, secondaryBtn, image } =
-  //   bannerData.heroData;
   const title = banner.heroData.title;
   const description = banner.heroData.description;
   const bannderImage = banner.heroData.image;
   const primaryBtn = banner.heroData.primaryBtn;
   const secondaryBtn = banner.heroData.secondaryBtn;
   const badge = banner.heroData.badge;
-  // console.log(banner.heroData);
+
   return (
     <section className="container mx-auto px-10 py-16 flex flex-col md:flex-row items-center gap-12">
       <div className="flex-1 space-y-6">
