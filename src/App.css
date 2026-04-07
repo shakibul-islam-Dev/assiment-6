@@ -1,0 +1,12 @@
+.tab:checked {
+  background-color: #8b2cff !important;
+  color: white !important;
+  border-color: #8b2cff !important;
+}
+
+.tabs-box {
+  background-color: #f9fafb;
+  padding: 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+}

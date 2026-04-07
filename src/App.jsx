@@ -1,4 +1,5 @@
 import React, { StrictMode, Suspense, useState } from "react";
+import "./App.css";
 
 import Navbar from "./Component/Navigation/Navbar";
 import Footer from "./Component/Footer/Footer";
@@ -59,44 +60,40 @@ const App = () => {
       <Banner bannerData={bannerData}></Banner>
       <Rating starsDatas={starsDatas}></Rating>
       <Premium></Premium>
-
-      <div className="tabs tabs-box flex container justify-center mx-auto mt-10 items-center gap-4 text-[16px] font-bold">
-        <input
-          type="radio"
-          name="my_tabs_1"
-          className="tab rounded-full transition-all duration-300 tpx-6"
-          aria-label="Products"
-          onClick={() => {
-            setactiveTab("products");
-          }}
-          defaultChecked
-        />
-        <input
-          type="radio"
-          name="my_tabs_1"
-          className="tab rounded-full transition-all duration-300  px-6"
-          aria-label={`Cart (${cartsData.length})`}
-          onClick={() => {
-            setactiveTab("cart");
-          }}
-        />
+      <div className="flex justify-center mx-auto mt-10">
+        <div className="tabs tabs-boxed bg-gray-100 p-2 rounded-full inline-flex items-center gap-2">
+          <input
+            type="radio"
+            name="my_tabs_1"
+            role="tab"
+            className="tab rounded-full px-8 transition-all duration-300 font-bold"
+            aria-label="Products"
+            onClick={() => setactiveTab("products")} // Case sensitivity check korun
+            defaultChecked
+          />
+          <input
+            type="radio"
+            name="my_tabs_1"
+            role="tab"
+            className="tab rounded-full px-8 transition-all duration-300 font-bold"
+            aria-label={`Cart (${cartsData.length})`}
+            onClick={() => setactiveTab("cart")}
+          />
+        </div>
       </div>
 
-      {activetab === "products" && (
-        <Carts
-          cartsData={cartsData}
-          setCartsData={setCartsData}
-          cartsList={cartsList}
-        ></Carts>
-      )}
-      {activetab === "cart" && (
-        <CartModal
-          cartsData={cartsData}
-          setCartsData={setCartsData}
-          // setCartsData={setCartsData}
-        ></CartModal>
-      )}
-
+      <div className="mt-8">
+        {activetab === "products" && (
+          <Carts
+            cartsData={cartsData}
+            setCartsData={setCartsData}
+            cartsList={cartsList}
+          />
+        )}
+        {activetab === "cart" && (
+          <CartModal cartsData={cartsData} setCartsData={setCartsData} />
+        )}
+      </div>
       <Step></Step>
       <Transparent getTransparentData={getTransparentData}></Transparent>
       <Flow></Flow>
