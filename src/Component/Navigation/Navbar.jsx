@@ -9,7 +9,7 @@ const Navbar = ({ navgationData, cartsData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="container mx-auto flex items-center justify-between pt-8 px-4 lg:px-0 relative">
+    <nav className="container mx-auto w-full flex items-center  justify-between pt-8 px-4 lg:px-0    ">
       <Logo navDatas={navDatas} />
 
       {/* Desktop Links */}
@@ -78,7 +78,7 @@ const Logins = ({ navDatas, topBadge }) => {
   return (
     <div className="flex  relative items-center gap-2 md:gap-3">
       <button className=" relative text-xl md:text-2xl cursor-pointer">
-        <FiShoppingCart className="" />
+        <FiShoppingCart />
         {topBadge > 0 && (
           <span className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold border-2 border-white shadow-sm">
             {topBadge}

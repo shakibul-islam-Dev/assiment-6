@@ -9,6 +9,7 @@ import CartModal from "./Component/Cart/CartModal";
 import Premium from "./Component/Cart/Premium";
 import Step from "./Component/Step/Step";
 import Transparent from "./Component/Transparent/Transparent";
+import Flow from "./Component/workFlow/Flow";
 const getNavData = async () => {
   const res = await fetch("/navbar.json");
   return res.json();
@@ -39,6 +40,12 @@ const getTransparentDataLoad = async () => {
   return res.json();
 };
 const getTransparentData = getTransparentDataLoad();
+
+const getFooterData = async () => {
+  const res = await fetch("/footer.json");
+  return res.json();
+};
+const footerData = getFooterData();
 
 const App = () => {
   const [activetab, setactiveTab] = useState("products");
@@ -92,7 +99,8 @@ const App = () => {
 
       <Step></Step>
       <Transparent getTransparentData={getTransparentData}></Transparent>
-      <Footer></Footer>
+      <Flow></Flow>
+      <Footer footerData={footerData}></Footer>
     </div>
   );
 };

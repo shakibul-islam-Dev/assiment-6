@@ -1,0 +1,48 @@
+{
+  "brand": {
+    "name": "DigiTools",
+    "description": "Premium digital tools for creators, professionals, and businesses. Work smarter with our suite of powerful tools."
+  },
+  "sections": [
+    {
+      "title": "Product",
+      "links": [
+        { "label": "Features", "url": "#" },
+        { "label": "Pricing", "url": "#" },
+        { "label": "Templates", "url": "#" },
+        { "label": "Integrations", "url": "#" }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        { "label": "About", "url": "#" },
+        { "label": "Blog", "url": "#" },
+        { "label": "Careers", "url": "#" },
+        { "label": "Press", "url": "#" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "label": "Documentation", "url": "#" },
+        { "label": "Help Center", "url": "#" },
+        { "label": "Community", "url": "#" },
+        { "label": "Contact", "url": "#" }
+      ]
+    }
+  ],
+  "social_links": [
+    { "platform": "Instagram", "url": "#", "icon": "FaInstagram" },
+    { "platform": "Facebook", "url": "#", "icon": "FaFacebookF" },
+    { "platform": "X", "url": "#", "icon": "FaXTwitter" }
+  ],
+  "footer_bottom": {
+    "copyright": "© 2026 Digitools. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "url": "#" },
+      { "label": "Terms of Service", "url": "#" },
+      { "label": "Cookies", "url": "#" }
+    ]
+  }
+}
