@@ -1,0 +1,19 @@
+{
+  "stats": [
+    {
+      "id": 1,
+      "value": "50K+",
+      "label": "Active Users"
+    },
+    {
+      "id": 2,
+      "value": "200+",
+      "label": "Premium Tools"
+    },
+    {
+      "id": 3,
+      "value": "4.9",
+      "label": "Rating"
+    }
+  ]
+}
